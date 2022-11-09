@@ -5,6 +5,8 @@ const path = require('path');
 
 const app = express();
 
+const db = require('./utilities/dbConnection');
+
 // Para acceder a la información del body habilitado para JSON
 app.use(bodyParser.json());
 
