@@ -1,5 +1,5 @@
 const Product = require('../models/productModel');
-const { Op } = require("sequelize");
+const { Op } = require("sequelize");    // Operadores de sequelize para consultas
 
 exports.getProducts = (req, res, next) => {
     const product_name = req.query.product_name;
@@ -19,7 +19,7 @@ exports.getProducts = (req, res, next) => {
         Product.findAll({
             where: {
                 name: {
-                    [Op.substring]: product_name
+                    [Op.substring]: product_name    // substring = %[texto]%
                 }
             }
         })
