@@ -2,9 +2,10 @@ const Product = require('../models/productModel');
 const { Op } = require("sequelize");    // Operadores de sequelize para consultas
 
 exports.getProducts = (req, res, next) => {
-    const product_name = req.query.product_name;
+    const product_name = req.query.product_name;    // Request que tiene almacenado el dato de la busqueda en la URL
     console.log(product_name);
     if (!product_name) {
+        // Lista todos los productos si no existen datos en la busqueda
         Product.findAll()
             .then(product => {
                 return res.status(200).json({ message: 'Productos listados exitosamente.', products: product });
