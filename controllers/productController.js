@@ -1,16 +1,38 @@
 const Product = require('../models/productModel');
+const { Op } = require("sequelize");
 
 exports.getProducts = (req, res, next) => {
-    Product.findAll()
-        .then(product => {
-            return res.status(200).json({ message: 'Productos listados exitosamente.', products: product });
-        })
-        .catch(error => {
-            if (!error.statusCode) {
-                error.statusCode = 500;
+    const product_name = req.query.product_name;
+    console.log(product_name);
+    if (!product_name) {
+        Product.findAll()
+            .then(product => {
+                return res.status(200).json({ message: 'Productos listados exitosamente.', products: product });
+            })
+            .catch(error => {
+                if (!error.statusCode) {
+                    error.statusCode = 500;
+                }
+                next(error);
+            });
+    } else {
+        Product.findAll({
+            where: {
+                name: {
+                    [Op.substring]: product_name
+                }
             }
-            next(error);
-        });
+        })
+            .then(product => {
+                return res.status(200).json({ message: 'Productos listados exitosamente.', products: product });
+            })
+            .catch(error => {
+                if (!error.statusCode) {
+                    error.statusCode = 500;
+                }
+                next(error);
+            });
+    }
 };
 
 exports.getProductDetail = (req, res, next) => {
