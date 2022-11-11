@@ -1,7 +1,8 @@
 const Product = require('../models/productModel');
 const { Op } = require("sequelize");    // Operadores de sequelize para consultas
 
-const ITEMS_PER_PAGE = 6;
+// Variable que almacena cuantos productos se verán por página
+const ITEMS_PER_PAGE = 8;
 
 exports.getProducts = (req, res, next) => {
     const page = +req.query.page || 1;
