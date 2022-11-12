@@ -16,9 +16,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // Middleware para permitir CORS
-app.use(cors({
-    origin: '*'
-}));
+app.options('*', cors());
 
 // Rutas
 app.use(productRoutes);
