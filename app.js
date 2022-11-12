@@ -17,7 +17,6 @@ const db = require('./utilities/dbConnection');
 app.use(bodyParser.json());
 
 // Middleware para permitir CORS
-app.use(handlers.setHeaders);
 app.use(cors());
 
 // Rutas
