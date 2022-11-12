@@ -1,7 +1,7 @@
 // Imports globales y predefinidos
 const express = require('express');
 const bodyParser = require('body-parser');
-const path = require('path');
+const cors = require('cors');
 
 // Import propios
 const productRoutes = require('./routes/productRoutes');
@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 
 // Middleware para permitir CORS
 app.use(handlers.setHeaders);
+app.use(cors());
 
 // Rutas
 app.use(productRoutes);
