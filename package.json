@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "SET NODE_ENV=production&& SET MYSQL_DB=bsale_test&& SET MYSQL_USER=bsale_test&& SET MYSQL_PASSWORD=bsale_test&& SET HOST=mdb-test.c6vunyturrl6.us-west-1.rds.amazonaws.com&& node app.js"
   },
   "author": "Walter Arzapalo Rey",
   "license": "ISC",
