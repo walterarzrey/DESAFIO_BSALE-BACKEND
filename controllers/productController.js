@@ -4,6 +4,7 @@ const { Op } = require("sequelize");    // Operadores de sequelize para consulta
 // Variable que almacena cuantos productos se verán por página
 const ITEMS_PER_PAGE = 8;
 
+// 
 exports.getProducts = (req, res, next) => {
     const page = +req.query.page || 1;
     const ordername = req.query.ordername || 'id';

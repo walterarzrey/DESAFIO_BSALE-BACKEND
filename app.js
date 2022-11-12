@@ -4,14 +4,13 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 // Import propios
+const db = require('./utilities/dbConnection');
 const productRoutes = require('./routes/productRoutes');
 const categoryRoutes = require('./routes/categoryRoutes');
 const errorsController = require('./controllers/errorController');  // Import controlador de errores
 const handlers = require('./middleware/handlers');                  // Import middleware para controlar errores
 
 const app = express();
-
-const db = require('./utilities/dbConnection');
 
 // Para acceder a la información del body habilitado para JSON
 app.use(bodyParser.json());
