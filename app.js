@@ -19,8 +19,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Rutas
-app.use(productRoutes);
-app.use(categoryRoutes);
+app.use('/desafioApi', productRoutes);
+app.use('/desafioApi', categoryRoutes);
 
 // Ruta para devolver error 404
 app.use(errorsController.get404);
