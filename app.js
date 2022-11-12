@@ -16,7 +16,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // Middleware para permitir CORS
-app.use(handlers.setHeaders);
+app.use(cors());
 
 // Rutas
 app.use(productRoutes);
