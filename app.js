@@ -30,4 +30,14 @@ app.use(errorsController.get404);
 app.use(handlers.errorHandler);
 
 // Iniciar servidor
-app.listen(5000);
+db.authenticate()
+    .then(() => {
+        app.listen(5000);
+        console.log('Conexión exitosa.');
+    })
+    .catch(error => {
+        setTimeout(() => {
+            app.listen(5000);
+        }, 5000);
+        console.log('Conexión rechazada', error);
+    })
