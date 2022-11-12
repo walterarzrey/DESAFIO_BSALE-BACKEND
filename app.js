@@ -1,7 +1,6 @@
 // Imports globales y predefinidos
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
 
 // Import propios
 const db = require('./utilities/dbConnection');                     // Import datos de conexión a la db
@@ -16,7 +15,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // Middleware para permitir CORS
-app.use(cors());
+app.use(handlers.setHeaders);
 
 // Rutas
 app.use(productRoutes);
