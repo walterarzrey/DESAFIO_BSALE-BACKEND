@@ -4,9 +4,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 // Import propios
-const db = require('./utilities/dbConnection');
-const productRoutes = require('./routes/productRoutes');
-const categoryRoutes = require('./routes/categoryRoutes');
+const db = require('./utilities/dbConnection');                     // Import datos de conexión a la db
+const productRoutes = require('./routes/productRoutes');            // Import controlador de productos
+const categoryRoutes = require('./routes/categoryRoutes');          // Import controlador de categorias
 const errorsController = require('./controllers/errorController');  // Import controlador de errores
 const handlers = require('./middleware/handlers');                  // Import middleware para controlar errores
 
@@ -29,14 +29,17 @@ app.use(errorsController.get404);
 app.use(handlers.errorHandler);
 
 // Iniciar servidor
-db.authenticate()
-    .then(() => {
-        app.listen(5000);
-        console.log('Conexión exitosa.');
+const connection = async () => {
+    app.listen(process.env.PORT || 5000, async () => {
+        try {
+            // Se emplea ORM sequelize para evitar ataques de SQLInjection, ya que transforma la data en objetos
+            await db.authenticate()
+            console.log('Conexión exitosa.');
+        } catch (error) {
+            console.log('Acceso denegado:', error);
+            // Controla la reconexión a la base de datos
+            setTimeout(await db.authenticate(), 5000);
+        };
     })
-    .catch(error => {
-        setTimeout(() => {
-            app.listen(5000);
-        }, 5000);
-        console.log('Conexión rechazada', error);
-    })
+}
+connection();

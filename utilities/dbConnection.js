@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
 
-const db = new Sequelize('bsale_test', 'bsale_test', 'bsale_test',{
+const db = new Sequelize('bsale_test', process.env.MYSQL_USER, 'bsale_test',{
     dialect:'mysql',
-    host: 'mdb-test.c6vunyturrl6.us-west-1.rds.amazonaws.com'
+    host: process.env.HOST
 });
 
 module.exports = db;
