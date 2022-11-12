@@ -30,7 +30,7 @@ app.use(handlers.errorHandler);
 
 // Iniciar servidor
 const connection = async () => {
-    app.listen(5000, async () => {
+    app.listen(process.env.PORT || 5000, async () => {
         try {
             // Se emplea ORM sequelize para evitar ataques de SQLInjection, ya que transforma la data en objetos
             await db.authenticate()
