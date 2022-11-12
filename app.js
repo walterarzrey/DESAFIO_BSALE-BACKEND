@@ -23,11 +23,7 @@ app.use(productRoutes);
 app.use(categoryRoutes);
 
 // Ruta para devolver error 404
-app.get('*', (req, res,next) => {
-    res.status(404).json({
-        message: 'Página no encontrada'
-    });
-});
+app.use(errorsController.get404);
 
 // Middleware para controlar errores en general
 app.use(handlers.errorHandler);
