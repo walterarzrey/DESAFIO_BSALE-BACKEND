@@ -4,14 +4,14 @@ Bienvenidos a este proyecto, el cual permite intercambiar información mediante 
 Esta API no requiere token o algún tipo de autenticación, debido a que es un desarrollo de prueba técnica.
 
 # Contenidos 📋
-* [Construido con 🛠️](#construido-con-%EF%B8%8F)
+* [Construido con](#construido-con-%EF%B8%8F)
 * [Instalación](#instalación-)
-* [Ejemplos de funcionamiento ⚙️](#ejemplos-de-funcionamiento-%EF%B8%8F)
+* [Ejemplos de funcionamiento](#ejemplos-de-funcionamiento-%EF%B8%8F)
     1. [GET products](#GET-products)
     2. [GET products by Name](#GET-products-by-Name)
     3. [GET products by Category](#GET-products-by-Category)
     4. [GET categories](#GET-categories)
-* [Explicación del Desafio 🔈](#explicación-del-desafio-)
+* [Explicación del Desafio](#explicación-del-desafio-)
 
 ## Construido con 🛠️
 1. Entorno de ejecución - Node js
