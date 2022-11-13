@@ -3,7 +3,7 @@ API Rest Desafio Bsale 2022 (Backend)
 Bienvenidos a este proyecto, el cual permite intercambiar información mediante endpoints. Por ejemplo, se puede obtener el listado de productos filtrado por categorías.
 Esta API no requiere token o algún tipo de autenticación, debido a que es un desarrollo de prueba técnica.
 
-# Contenidos
+# Contenidos 📋
 * [Construido con 🛠️](#Construido-con-🛠️)
 * [Instalación](#Instalación)
 * [Ejemplos de funcionamiento ⚙️](#Ejemplos-de-funcionamiento-⚙️)
