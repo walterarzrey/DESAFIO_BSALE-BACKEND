@@ -3,14 +3,24 @@ API Rest Desafio Bsale 2022 (Backend)
 Bienvenidos a este proyecto, el cual permite intercambiar información mediante endpoints. Por ejemplo, se puede obtener el listado de productos filtrado por categorías.
 Esta API no requiere token o algún tipo de autenticación, debido a que es un desarrollo de prueba técnica.
 
-### Construido con 🛠️
+# Contenidos
+* [Construido con 🛠️](#Construido-con-🛠️)
+* [Instalación](#Instalación)
+* [Ejemplos de funcionamiento ⚙️](#Ejemplos-de-funcionamiento-⚙️)
+    1. [GET products](#GET-products)
+    2. [GET products by Name](#GET-products-by-Name)
+    3. [GET products by Category](#GET-products-by-Category)
+    4. [GET categories](#GET-categories)
+* [Explicación del Desafio 🔈](#Explicación-del-Desafio-🔈)
+
+## Construido con 🛠️
 1. Entorno de ejecución - Node js
 2. Framework - Express
 3. Consultas ORM - Sequelize
 4. Cliente MySQL - MySQL2
 5. Analizador de cuerpo de solicitudes - Body-parser
 
-### Instalación 🔧
+## Instalación 🔧
 1. Instalar Node.js versión 18.6.0.
 2. Clonar o descargar este repositorio.
     ```bash
@@ -26,7 +36,7 @@ Esta API no requiere token o algún tipo de autenticación, debido a que es un d
         $ npm start         // Comando de ejecución
     ```
 
-# Ejemplos de funcionamiento ⚙️
+## Ejemplos de funcionamiento ⚙️
 ### GET products
 Obtiene todos los productos
 - `GET /products`
@@ -34,10 +44,10 @@ Obtiene todos los productos
 - page: El número de paginación en la que se lista los productos.
 - ordername: Dato por el cual se ordena la lista de productos.
 - direction: Dato (Ascendente o Descendente) por el cual se ordena la lista de productos.
-### Ejemplos
+#### Ejemplos
 - `GET /products?page=1&ordername=id&direction=ASC`
 - `GET /products?page=4&ordername=name&direction=ASC`
-### Respuesta
+#### Respuesta
 ```json
     {
         "message": "Productos listados exitosamente.",
@@ -123,10 +133,10 @@ Obtiene todos los productos filtrados por el nombre
 - page: El número de paginación en la que se lista los productos.
 - ordername: Dato por el cual se ordena la lista de productos.
 - direction: Dato (Ascendente o Descendente) por el cual se ordena la lista de productos.
-### Ejemplos
+#### Ejemplos
 - `GET /products?page=1&ordername=name&direction=ASC`
 - `GET /products?page=2&ordername=name&direction=DESC`
-### Respuesta
+#### Respuesta
 ```json
     {
         "message": "Productos listados exitosamente.",
@@ -173,10 +183,10 @@ Obtiene todos los productos filtrados por la categoría
 - page: El número de paginación en la que se lista los productos.
 - ordername: Dato por el cual se ordena la lista de productos.
 - direction: Dato (Ascendente o Descendente) por el cual se ordena la lista de productos.
-### Ejemplos
+#### Ejemplos
 - `GET /products/1?page=1&ordername=id&direction=ASC`
 - `GET /products/2?page=2&ordername=name&direction=DESC`
-### Respuesta
+#### Respuesta
 ```json
     {
         "message": "Productos listados exitosamente.",
@@ -260,9 +270,9 @@ Obtiene todas las categorías
 - `GET /categories`
 #### Parámetros
 - Sin parámetros.
-### Ejemplos
+#### Ejemplos
 - `GET /categories`
-### Respuesta
+#### Respuesta
 ```json
     {
         "message": "Categorias listadas exitosamente.",
@@ -299,7 +309,7 @@ Obtiene todas las categorías
     }
 ```
 
-## Explicación del Ejercicio 🔈
+## Explicación del Desafio 🔈
 API desarrollada con Node.js
 ### Estructura
 Se utilizó la arquitectura MVC para el desarrollo del API del ejercicio, y se estructuro los archivos de la siguiente manera:
