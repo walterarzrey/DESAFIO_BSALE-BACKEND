@@ -2,13 +2,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-// Import propios
-const db = require('./utilities/dbConnection');                     // Import datos de conexión a la db
-const productRoutes = require('./routes/productRoutes');            // Import controlador de productos
-const categoryRoutes = require('./routes/categoryRoutes');          // Import controlador de categorias
+// Imports propios
+const db = require('./utilities/dbConnection');                     // Import ORM de sequelize para la conexión
+const productRoutes = require('./routes/productRoutes');            // Import ruta de productos
+const categoryRoutes = require('./routes/categoryRoutes');          // Import ruta de categorias
 const errorsController = require('./controllers/errorController');  // Import controlador de errores
 const handlers = require('./middleware/handlers');                  // Import middleware para controlar errores
 
+// Inicializa la aplicación con el framework express
 const app = express();
 
 // Para acceder a la información del body habilitado para JSON
@@ -29,9 +30,9 @@ app.use(handlers.errorHandler);
 
 // Iniciar servidor
 const connection = async () => {
-    app.listen(process.env.PORT || 5000, async () => {
+    app.listen(process.env.PORT || 5000, async () => {  // Inicia el puerto del servidor
         try {
-            // Se emplea ORM sequelize para evitar ataques de SQLInjection, ya que transforma la data en objetos
+            // Se prueba si la conexión es correcta con el ORM de sequelize (Datos de la conexión)
             await db.authenticate()
             console.log('Conexión exitosa.');
         } catch (error) {
@@ -41,4 +42,4 @@ const connection = async () => {
         };
     })
 }
-connection();
+connection();   // Se abre la conexión

@@ -1,7 +1,10 @@
+// Import ORM sequelize
 const Sequelize = require('sequelize');
 
+// Importar conexión a la base de datos
 const db = require('../utilities/dbConnection');
 
+// Crear modelo producto definiendo los campos que contendrá y tipos de datos
 const Product = db.define('product', {
     id: {
         type: Sequelize.INTEGER,
@@ -31,4 +34,5 @@ const Product = db.define('product', {
     }
 },{ tableName: 'product',timestamps: false});
 
+// Exportar modelo
 module.exports = Product;
