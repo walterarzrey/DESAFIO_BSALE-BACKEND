@@ -346,5 +346,5 @@ Contiene los siguientes archivos:
 Contiene el siguiente archivo:
  - dbConnection.js - Contiene la configuración para conectarse a la Base de Datos. Utiliza **Variables de Entorno**.
 
-### App.js
+#### App.js
 Archivo de inicio que se debe ejecutar para habilitar la API.
