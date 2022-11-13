@@ -25,7 +25,7 @@ exports.getProducts = (req, res, next) => {
                 const prods = product.rows.map((res) => {
                     return res.dataValues;
                 })
-                return res.status(200).json({ message: 'Productos listados exitosamente.', products: prods, totalProducts, ITEMS_PER_PAGE, ordername, direction });
+                return res.status(200).json({ message: 'Productos listados exitosamente.', products: prods, totalProducts, ITEMS_PER_PAGE, page, ordername, direction, product_name });
             })
             .catch(error => {
                 if (!error.statusCode) {
@@ -51,7 +51,7 @@ exports.getProducts = (req, res, next) => {
                 const prods = product.rows.map((res) => {
                     return res.dataValues;
                 })
-                return res.status(200).json({ message: 'Productos listados exitosamente.', products: prods, totalProducts, ITEMS_PER_PAGE, ordername, direction });
+                return res.status(200).json({ message: 'Productos listados exitosamente.', products: prods, totalProducts, ITEMS_PER_PAGE, page, ordername, direction, product_name });
             })
             .catch(error => {
                 if (!error.statusCode) {
@@ -107,7 +107,7 @@ exports.getProductsByCategory = (req, res, next) => {
                 error.statusCode = 404;
                 throw error;
             }
-            return res.status(200).json({ message: 'Productos listados exitosamente.', products: prods, totalProducts, ITEMS_PER_PAGE, ordername, direction });
+            return res.status(200).json({ message: 'Productos listados exitosamente.', products: prods, totalProducts, ITEMS_PER_PAGE, page, ordername, direction, categoryId });
         })
         .catch(error => {
             if (!error.statusCode) {
