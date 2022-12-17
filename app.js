@@ -30,7 +30,7 @@ app.use(handlers.errorHandler);
 
 // Iniciar servidor
 const connection = async () => {
-    app.listen(process.env.PORT || 5000, async () => {  // Inicia el puerto del servidor
+    app.listen(3000 || 5000, async () => {  // Inicia el puerto del servidor
         try {
             // Se prueba si la conexión es correcta con el ORM de sequelize (Datos de la conexión)
             await db.authenticate()

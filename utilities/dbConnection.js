@@ -2,9 +2,9 @@
 const Sequelize = require('sequelize');
 
 // Iniciar conexión hacia la base de datos con variables de entorno ubicadas en el servidor del deploy
-const db = new Sequelize(process.env.MYSQL_DB, process.env.MYSQL_USER, process.env.MYSQL_PASSWORD,{
+const db = new Sequelize('bsale_test', 'bsale_test', 'bsale_test',{
     dialect:'mysql',
-    host: process.env.HOST
+    host: 'mdb-test.c6vunyturrl6.us-west-1.rds.amazonaws.com'
 });
 
 // Exportar conexión
